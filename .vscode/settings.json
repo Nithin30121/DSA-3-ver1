@@ -1,0 +1,20 @@
+{
+    // Use the Homebrew JDK 21 on this Mac for the Java extension (Run button, syntax help).
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home",
+            "default": true
+        }
+    ],
+    // Make `java` and `javac` in the VS Code terminal use the same JDK 21.
+    // A normal Terminal may use a different JDK; ./run.sh recompiles on every
+    // start, so the program works with either.
+    "terminal.integrated.env.osx": {
+        "PATH": "/opt/homebrew/opt/openjdk@21/bin:${env:PATH}"
+    },
+    "files.exclude": {
+        "out": true,
+        "bin": true
+    }
+}
